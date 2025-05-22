@@ -1,0 +1,64 @@
+---
+import WorkItem from '../parts/workItem.astro';
+---
+
+<div class="p-index_works__main">
+  <div class="p-index_works__tab">
+    {
+      [
+        {
+          title: 'Website',
+          status: 'is-current',
+        },
+        {
+          title: 'Direction',
+          status: '',
+        },
+        {
+          title: 'Other',
+          status: '',
+        },
+      ].map(({ title, status }, index) => <div class={`p-index_works__tab__item js-tab_trg ${status}`} set:html={title} />)
+    }
+  </div>
+  <div class="p-index_works__contents">
+    <WorkItem />
+    <WorkItem />
+  </div>
+</div>
+
+<style lang="scss">
+  .p-index_works__tab {
+    max-inline-size: res_px_max(360px, 906px);
+    margin-inline: auto;
+    background-color: var(--color-point-50);
+    padding: res_px_max(8px, 16px) res_px_max(16px, 28px);
+    border-radius: 100vmax;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: res_px_max(8px, 32px);
+    margin-block-end: res_px_max(28px, 32px);
+    &__item {
+      background-color: var(--color-white-00);
+      border-radius: 100vmax;
+      font-family: var(--font-en);
+      color: var(--color-main-50);
+      text-align: center;
+      padding: res_px_max(5px, 10px);
+      font-weight: 600;
+      font-size: res_rem_max(14px, 18px);
+      &.is-current {
+        background-color: var(--color-main-50);
+        color: var(--color-white-00);
+      }
+    }
+  }
+  .p-index_works__contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: res_px_max(32px, 54px) res_px_max(16px, 24px);
+    @include mq-sp {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>

@@ -1,3 +1,55 @@
 <footer class="l-footer">
-  <p>footer</p>
+  <div class="c-container">
+    <div class="l-footer__title"></div>
+    <div class="l-footer__mail">
+      <a href="mailto:0ka6e1de8@gmail.com">0ka6e1de8@gmail.com</a>
+    </div>
+  </div>
 </footer>
+
+<style lang="scss">
+  .l-footer {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1600 / 659;
+    width: 100%;
+    background: var(--color-gradient-point);
+    mask-image: url('/img/common/footer_mask.svg');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center top;
+    margin-block-start: res_px_max(-135px, -270px);
+    z-index: 3;
+    padding-block: res_px_max(120px, 230px);
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-image: url('/img/common/bg_noize.png');
+      background-size: res_px_max(250px, 500px) res_px_max(250px, 500px);
+      opacity: 0.17;
+      background-repeat: repeat;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      mix-blend-mode: overlay;
+      z-index: -1;
+    }
+    &__mail {
+      inline-size: res_rem_max(300px, 370px);
+      margin-inline: auto;
+      a {
+        display: block;
+        inline-size: 100%;
+        background-color: var(--color-white-00);
+        color: var(--color-main-50);
+        text-align: center;
+        border-radius: 100vmax;
+        padding: res_px_max(8px, 16px);
+        font-size: res_rem_max(14px, 18px);
+      }
+    }
+  }
+</style>

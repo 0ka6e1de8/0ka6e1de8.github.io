@@ -12,7 +12,11 @@
   "dependencies": {
     "@fontsource-variable/jost": "^5.2.5",
     "@fontsource-variable/noto-sans-jp": "^5.2.5",
-    "astro": "^5.7.13"
+    "@fontsource/zen-kaku-gothic-new": "^5.2.5",
+    "astro": "^5.7.13",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
+    "sass": "^1.89.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

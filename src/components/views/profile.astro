@@ -1,0 +1,51 @@
+---
+
+---
+
+<div class="p-index_profile__block">
+  <figure class="p-index_profile__block__pic">
+    <img src="https://placehold.jp/580x374.png" alt="" />
+  </figure>
+  <div class="p-index_profile__block__text">
+    <div class="p-index_profile__block__name">
+      <div class="en"><em>M</em>iyamoto Kaede</div>
+      <small class="jp">宮本 楓</small>
+    </div>
+    <p>
+      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+    </p>
+  </div>
+</div>
+
+<style lang="scss">
+  .p-index_profile__block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: res_px_max(20px, 40px);
+    @include mq-sp {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__pic {
+      overflow: hidden;
+      border-radius: res_px_max(16px, 32px);
+    }
+    &__text {
+      color: var(--color-main-60);
+    }
+    &__name {
+      font-weight: 700;
+      margin-block-end: res_px_max(28px, 32px);
+      .en {
+        font-family: var(--font-en);
+        font-size: res_rem_max(30px, 50px);
+        :global(em) {
+          color: var(--color-point-50);
+          font-style: normal;
+        }
+      }
+      .jp {
+        font-size: res_rem_max(16px, 20px);
+      }
+    }
+  }
+</style>

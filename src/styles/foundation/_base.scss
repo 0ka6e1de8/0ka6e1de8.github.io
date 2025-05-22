@@ -1,9 +1,9 @@
-@use "./variable" as *;
-@use "./function" as *;
-@use "./mixin" as *;
+@use './variable' as *;
+@use './function' as *;
+@use './mixin' as *;
 :root {
-  --font-ja: "Noto Sans JP Variable", sans-serif;
-  --font-en: "Jost", sans-serif;
+  --font-ja: 'Zen Kaku Gothic New', sans-serif;
+  --font-en: 'Jost', sans-serif;
 
   --color-black-100: #212524;
   --color-white-00: #fff;
@@ -18,6 +18,9 @@
   --color-point-50: #4dae5c;
   --color-point-30: #a6d7ae;
   --color-point-10: #d3ebd6;
+
+  --color-gradient-main: linear-gradient(to bottom, #fa815d 0%, #ffd5c8 100%);
+  --color-gradient-point: linear-gradient(to bottom, #4dae5c 0%, #ffebb2 100%);
 
   --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
   --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
@@ -55,7 +58,7 @@ body {
   color: var(--color-black-100);
   font-family: var(--font-ja);
   -webkit-text-size-adjust: 100%;
-  font-feature-settings: "palt";
+  font-feature-settings: 'palt';
   text-indent: res_rem_max(0px, 0px);
   font-size: res_rem_max(14px, 16px);
   letter-spacing: 0;
@@ -64,6 +67,27 @@ body {
   &.is-drawer-open,
   &.is-act {
     overflow: hidden;
+  }
+}
+
+.l-main {
+  background: var(--color-gradient-main);
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/common/bg_noize.png');
+    background-size: res_px_max(250px, 500px) res_px_max(250px, 500px);
+    opacity: 0.17;
+    background-repeat: repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    mix-blend-mode: overlay;
   }
 }
 
