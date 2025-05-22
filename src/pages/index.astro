@@ -1,5 +1,9 @@
 ---
-
+import '../styles/globals.scss';
+import '@fontsource-variable/noto-sans-jp';
+import '@fontsource-variable/jost';
+import Header from '../components/templates/header.astro';
+import Footer from '../components/templates/footer.astro';
 ---
 
 <html lang="en">
@@ -11,11 +15,16 @@
     <title>私のポートフォリオ</title>
   </head>
   <body>
-    <h1>Hello world！</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex inventore
-      nobis veritatis velit porro aliquam veniam quos odio expedita nam. Saepe
-      in nostrum repudiandae, hic corrupti alias ab. Sit, totam.
-    </p>
+    <Header />
+    <div id="page" class="p-index">
+      <section class="p-index_kv">
+        <p class="u-font-en">JOST</p>
+      </section>
+      <section class="p-index_works"></section>
+      <section class="p-index_profile">
+        <div class="c-container"></div>
+      </section>
+    </div>
+    <Footer />
   </body>
 </html>
