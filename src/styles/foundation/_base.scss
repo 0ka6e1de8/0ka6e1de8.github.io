@@ -73,7 +73,21 @@ body {
 .l-main {
   background: var(--color-gradient-main);
   position: relative;
-
+  z-index: 2;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/common/bg_pattern.png');
+    background-size: res_px_max(40px, 80px) res_px_max(40px, 80px);
+    background-repeat: repeat;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.24;
+    z-index: -1;
+  }
   &::after {
     content: '';
     width: 100%;
@@ -83,10 +97,10 @@ body {
     opacity: 0.17;
     background-repeat: repeat;
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: -1;
     mix-blend-mode: overlay;
   }
 }
@@ -94,7 +108,7 @@ body {
 #page {
   position: relative;
   overflow: clip;
-  padding-block-start: res_px_max($header_height_min, $header_height_max);
+  // padding-block-start: res_px_max($header_height_min, $header_height_max);
   @include mq-sp {
     // padding-block-start: 130px;
     padding-block-start: 0;

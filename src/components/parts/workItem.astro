@@ -1,12 +1,39 @@
+---
+import FontAwesome from './fontAwesome.astro';
+type Props = {
+  id?: string;
+  title: string;
+  desc?: string;
+  image?: string;
+  url?: string;
+  category?: string;
+  class?: string;
+};
+
+const { class: className, id, title, desc, image, url, category } = Astro.props;
+---
+
 <div class="c-work_item">
   <div class="c-work_item__thumb">
-    <img src="https://placehold.jp/548x384.png" alt="" />
+    <img src={image} alt="" />
   </div>
-  <div class="c-work_item__title">タイトルが入ります。</div>
-  <button class="c-work_item__button">
+  <div class="c-work_item__title" set:html={title} />
+  <button class="c-work_item__button js-modal_trg" data-id={`modal-${id}`}>
     <span class="c-work_item__button__text">詳しく見る</span>
     <i class="c-work_item__button__icon">+</i>
   </button>
+</div>
+
+<div class="c-modal js-modal_body" id={`modal-${id}`}>
+  <div class="c-modal__thumb">
+    <img src={image} alt="" />
+  </div>
+  <div class="c-modal__title" set:html={title} />
+  <div class="c-modal__link">
+    <a href={url} target="_blank" rel="noopener noreferrer" class="c-modal__link__text"> 実際のサイトはこちら<FontAwesome icon="blank" /> </a>
+  </div>
+  <p class="c-modal__desc" set:html={desc} />
+  <div class="c-modal_close js-modal_close">× 閉じる</div>
 </div>
 
 <style lang="scss">
@@ -16,8 +43,11 @@
       border-radius: res_px_max(16px, 32px);
       overflow: hidden;
       margin-block-end: res_px_max(16px, 28px);
+      aspect-ratio: 548 / 384;
       :global(img) {
-        width: 100%;
+        inline-size: 100%;
+        block-size: 100%;
+        object-position: left center;
       }
     }
     &__title {

@@ -9,6 +9,8 @@ import Footer from '@/components/templates/footer.astro';
 import SectionTitlePrimary from '@/components/parts/sectionTitlePrimary.astro';
 import WorksArchive from '@/components/views/worksArchive.astro';
 import Profile from '@/components/views/profile.astro';
+import Kv from '@/components/views/kv.astro';
+import Works from '@/components/views/works.astro';
 ---
 
 <html lang="en">
@@ -23,64 +25,16 @@ import Profile from '@/components/views/profile.astro';
     <Header />
     <main class="l-main">
       <div id="page" class="p-index">
-        <section class="p-index_kv">
-          <div class="p-index_kv__en">Portfolio</div>
-        </section>
-        <section class="p-index_works">
-          <div class="c-container">
-            <SectionTitlePrimary class="-white">
-              <span class="en">Works</span>
-              <span class="jp">[制作事例]</span>
-            </SectionTitlePrimary>
-            <WorksArchive />
-          </div>
-        </section>
-        <section class="p-index_profile">
-          <div class="c-container">
-            <SectionTitlePrimary>
-              <span class="en">Profile</span>
-              <span class="jp">[自己紹介]</span>
-            </SectionTitlePrimary>
-            <Profile />
-          </div>
-        </section>
+        <Kv />
+        <Works />
+        <Profile />
       </div>
     </main>
     <Footer />
+    <script>
+      import '@/client';
+    </script>
   </body>
 </html>
 
-<style lang="scss">
-  #page {
-    position: relative;
-    z-index: 2;
-    &::before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-image: url('/img/common/bg_pattern.png');
-      background-size: res_px_max(40px, 80px) res_px_max(40px, 80px);
-      background-repeat: repeat;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0.24;
-      z-index: -1;
-    }
-  }
-
-  .p-index_kv {
-    height: 100vh;
-  }
-
-  .p-index_works {
-    padding-block-end: res_px_max(80px, 160px);
-  }
-
-  .p-index_profile {
-    background-color: var(--color-white-00);
-    padding-block: res_rem_max(60px, 100px) res_px_max(200px, 350px);
-    border-radius: res_px_max(30px, 60px) res_px_max(30px, 60px) 0 0;
-  }
-</style>
+<style lang="scss"></style>

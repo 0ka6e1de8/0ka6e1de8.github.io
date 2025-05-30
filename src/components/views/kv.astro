@@ -1,1 +1,38 @@
-<div class="p-index_kv"></div>
+<div class="p-index_kv">
+  <div class="p-index_kv__illust">
+    <img src="/img/kv/kv_illust.png" alt="" />
+  </div>
+  <p class="p-index_kv__en">
+    <i><img src="/img/common/title_parts.png" alt="" /></i>
+    Portfolio
+  </p>
+</div>
+
+<style lang="scss">
+  .p-index_kv {
+    padding-block: res_px_max(70px, 140px);
+    &__illust {
+      inline-size: res_rem_max(356px, 1020px);
+      margin-inline: auto;
+    }
+    &__en {
+      text-transform: uppercase;
+      color: var(--color-white-00);
+      font-family: var(--font-en);
+      font-size: res_rem_max(13px, 24px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      line-height: 1;
+      gap: 8px;
+      letter-spacing: 0.26em;
+      margin-block-start: res_px_max(-10px, -60px);
+      i {
+        :global(img) {
+          inline-size: res_rem_max(20px, 30px);
+        }
+      }
+    }
+  }
+</style>
